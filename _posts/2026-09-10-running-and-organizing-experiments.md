@@ -8,7 +8,7 @@ description: "How I run and organize experiments."
 
 This post describes how I run and organize (deep learning) experiments. I have been asked multiple times about this, so maybe it is worth sharing.
 
-The following first describes how I run experiments and then how I organize them. 
+The following first describes how I run experiments, followed by how I organize them. 
 
 ## Running experiments with lmbrun
 {% comment %}

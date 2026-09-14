@@ -1,0 +1,233 @@
+/* Styles for blog posts. Deliberately independent of the table-based
+   stylesheet.css used by the landing page. */
+
+:root {
+  --text: #1f2328;
+  --muted: #656d76;
+  --link: #0969da;
+  --rule: #d8dee4;
+  --code-bg: #f6f8fa;
+  --todo-bg: #fff8e6;
+  --todo-border: #e3b341;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.post {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+/* Header ------------------------------------------------------------ */
+
+.post-nav {
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.post-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.post-nav a:hover {
+  color: var(--link);
+}
+
+.post-header {
+  margin-bottom: 2.5rem;
+}
+
+.post-header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.post-meta {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* Body -------------------------------------------------------------- */
+
+.post-content h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.post-content h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.125rem;
+}
+
+.post-content p,
+.post-content ul,
+.post-content ol {
+  margin: 0 0 1.25rem;
+}
+
+.post-content li {
+  margin-bottom: 0.35rem;
+}
+
+.post-content a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-content hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.post-content blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.1rem 0 0.1rem 1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+}
+
+.post-content img,
+.post-content video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Screenshots are mostly white, so give them an edge against the page. */
+.post-content img {
+  display: block;
+  border: 1px solid var(--rule);
+}
+
+/* Low-resolution screenshots: rendering them below column width reduces the
+   upscaling on high-DPI displays, which is what makes them look soft. */
+.post-content img.narrow {
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.post-content figure {
+  margin: 1.8rem 0;
+}
+
+.post-content figure.video {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.post-content figure.video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  /* The slides are white, so give the frame an edge against the page. */
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.post-content figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Code -------------------------------------------------------------- */
+
+.post-content code {
+  padding: 0.15em 0.35em;
+  background: var(--code-bg);
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.8em;
+}
+
+.post-content pre {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  background: var(--code-bg);
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.post-content pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.82em;
+}
+
+/* Wide content must scroll inside its own box, never the page. */
+.post-content .table-wrapper,
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+}
+
+/* Visible TODO placeholders (remove these from the post when resolved) */
+
+.todo {
+  margin: 1.2rem 0;
+  padding: 0.7rem 1rem;
+  background: var(--todo-bg);
+  border-left: 3px solid var(--todo-border);
+  border-radius: 0 4px 4px 0;
+  color: #6b5400;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .post { padding: 2rem 1rem 4rem; }
+  .post-header h1 { font-size: 1.75rem; }
+}
+
+/* Rouge syntax highlighting (GitHub light) --------------------------- */
+
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: #6a737d; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #d73a49; }
+.highlight .o, .highlight .ow { color: #d73a49; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx { color: #032f62; }
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #005cc5; }
+.highlight .na, .highlight .nv, .highlight .vi { color: #005cc5; }
+.highlight .nb, .highlight .bp { color: #005cc5; }
+.highlight .nc, .highlight .nn { color: #6f42c1; }
+.highlight .nf { color: #6f42c1; }
+.highlight .nt { color: #22863a; }
+.highlight .gd { color: #b31d28; background-color: #ffeef0; }
+.highlight .gi { color: #22863a; background-color: #f0fff4; }
+.highlight .gh { color: #005cc5; font-weight: bold; }
+.highlight .err { color: #b31d28; }

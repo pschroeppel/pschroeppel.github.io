@@ -1,0 +1,19 @@
+title: Philipp Schröppel
+description: Reserach webpage of Philipp Schröppel
+url: https://pschroeppel.github.io
+lang: en
+
+# Posts are published at /posts/<slug>/
+permalink: /posts/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Files that should not be processed or copied into the built site.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

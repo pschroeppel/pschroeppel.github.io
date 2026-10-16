@@ -11,10 +11,7 @@ This post describes how I run and organize (deep learning) experiments. I have b
 The following first describes how I run experiments, followed by how I organize them. 
 
 ## Running experiments with lmbrun
-{% comment %}
 For running experiments, I use a tool called [lmbrun](https://github.com/pschroeppel/lmbrun). I've developed the tool throughout my PhD and at the core it combines multiple experimenting tools from members of our computer vision group.
-{% endcomment %}
-For running experiments, I use a tool called `lmbrun` (will be published soon). I've developed the tool throughout my PhD and at the core it combines multiple experimenting tools from members of our computer vision group.
 
 The typical workflow is to create a config file that specifies metadata, compute requirements, and commands. An experiment can then simply be started by executing `lmbrun config.yaml`. `lmbrun` then can:
 
